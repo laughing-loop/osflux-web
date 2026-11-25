@@ -9,10 +9,13 @@ Needs Python 3 with Pillow (WebP support), fontTools and brotli:
 Writes into site/assets/:
     fonts/   IBM Plex Sans (300, 400, 600) and Mono (400, 500) as WOFF2,
              subset to Latin, plus the OFL licence
-    brand/   the ink and white lockups and the small mark (copied as they are)
+    brand/   the ink and white lockups and the three-bar small mark used as
+             the SVG favicon (copied as they are)
     img/     Studio frames 02 and 07, dark and light, as WebP at 720 and 1200 px
-    icons/   favicon-32.png and apple-touch-icon.png
-and site/og-image.png (1200 x 630).
+    icons/   favicon-32.png (copied from the Windows icon set) and
+             apple-touch-icon.png
+and, at the site root, favicon.ico (16, 32 and 48 px frames of the Windows
+icon) and og-image.png (1200 x 630).
 
 The OSflux repo is only read, never changed.
 """
@@ -70,7 +73,7 @@ def copy_brand(src: Path) -> None:
     out = ASSETS / "brand"
     out.mkdir(parents=True, exist_ok=True)
     svg = src / "assets" / "brand" / "svg"
-    for name in ["osflux-lockup-ink.svg", "osflux-lockup-white.svg", "osflux-mark-small-blue.svg"]:
+    for name in ["osflux-lockup-ink.svg", "osflux-lockup-white.svg", "osflux-mark-small3-16.svg"]:
         shutil.copyfile(svg / name, out / name)
 
 
@@ -87,36 +90,38 @@ def build_frames(src: Path) -> None:
                 resized.save(out / f"{frame}-{theme}-{width}.webp", "WEBP", quality=80, method=6)
 
 
-def small_mark(size: int) -> Image.Image:
-    """Draw osflux-mark-small-blue.svg (16-unit grid) at `size` px.
-
-    The SVG: centre (8.5, 8); ring between radius 4 and 7, open on the left
-    where |y| < 4; bars from x -7.5 to 1.5 at y -3..-1 and -5.5 to -0.5 at y 1..3.
-    """
-    scale = 16  # supersample, then reduce
-    s = size * scale / 16  # pixels per unit
-    big = Image.new("RGBA", (size * scale, size * scale), (0, 0, 0, 0))
-    mask = Image.new("L", big.size, 0)
-    d = ImageDraw.Draw(mask)
-    cx, cy = 8.5, 8
-
-    def box(x0, y0, x1, y1):
-        return [(cx + x0) * s, (cy + y0) * s, (cx + x1) * s - 1, (cy + y1) * s - 1]
-
-    d.ellipse(box(-7, -7, 7, 7), fill=255)
-    d.ellipse(box(-4, -4, 4, 4), fill=0)
-    d.rectangle(box(-8.5, -4, 0, 4), fill=0)  # opening on the left
-    d.rectangle(box(-7.5, -3, 1.5, -1), fill=255)
-    d.rectangle(box(-5.5, 1, -0.5, 3), fill=255)
-    big.paste(Image.new("RGBA", big.size, BLUE), (0, 0), mask)
-    return big.resize((size, size), Image.LANCZOS)
+ICO_SIZES = [16, 32, 48]
 
 
 def build_icons(src: Path) -> None:
+    """Favicons, taken from the brand pack as drawn, never redrawn or resampled.
+
+    favicon-32.png  the full three-bar mark, icons/windows/osflux-32.png
+    favicon.ico     the 16, 32 and 48 px frames of icons/windows/osflux.ico
+    The SVG favicon (svg/osflux-mark-small3-16.svg) is copied by copy_brand.
+    """
     out = ASSETS / "icons"
     out.mkdir(parents=True, exist_ok=True)
-    small_mark(32).save(out / "favicon-32.png", optimize=True)
-    tile = Image.open(src / "assets" / "brand" / "icons" / "tile" / "osflux-tile-512.png")
+    brand = src / "assets" / "brand"
+    windows = brand / "icons" / "windows"
+
+    shutil.copyfile(windows / "osflux-32.png", out / "favicon-32.png")
+
+    ico = Image.open(windows / "osflux.ico")
+    frames = [ico.ico.getimage((size, size)).convert("RGBA") for size in ICO_SIZES]
+    for size, frame in zip(ICO_SIZES, frames):
+        if frame.size != (size, size):
+            sys.exit(f"osflux.ico has no {size} px frame")
+    # The largest frame is the base; the smaller ones are stored as they are
+    # (append_images), so Pillow does not scale the 48 px frame down for them.
+    frames[-1].save(
+        SITE / "favicon.ico",
+        format="ICO",
+        sizes=[(size, size) for size in ICO_SIZES],
+        append_images=frames[:-1],
+    )
+
+    tile = Image.open(brand / "icons" / "tile" / "osflux-tile-512.png")
     tile.convert("RGBA").resize((180, 180), Image.LANCZOS).save(out / "apple-touch-icon.png", optimize=True)
 
 

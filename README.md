@@ -15,7 +15,9 @@ Plain HTML and CSS. No framework, no build step, no JavaScript, no trackers and 
 | `site/404.html` | Shown by GitHub Pages for any missing address. |
 | `site/assets/css/site.css` | All styles. Colours, type and shape follow OSflux Studio v2. |
 | `site/assets/fonts/` | IBM Plex Sans (300, 400, 600) and IBM Plex Mono (400, 500) as WOFF2, subset to Latin, with `OFL.txt`. |
-| `site/assets/brand/` | The OSflux lockups (ink for light, white for dark) and the small mark used as the favicon. |
+| `site/assets/brand/` | The OSflux lockups (ink for light, white for dark) and the three-bar small mark used as the SVG favicon. |
+| `site/assets/icons/` | `favicon-32.png` (the full mark at 32 px) and the Apple touch icon. |
+| `site/favicon.ico` | The 16, 32 and 48 px frames of OSflux's Windows icon, for older browsers. |
 | `site/assets/img/` | Studio design frames 02 and 07, dark and light, as WebP. |
 | `site/og-image.png` | The 1200 × 630 Open Graph and Twitter image. |
 | `tools/build_assets.py` | Regenerates the fonts, frames, icons and Open Graph image from a checkout of `laughing-loop/OSflux`. |
@@ -52,7 +54,7 @@ Every push to `main` runs `.github/workflows/pages.yml`, which uploads the `site
 
 ## Regenerating assets
 
-The fonts, Studio frames, favicon PNGs and Open Graph image are made from the OSflux repository, which is only read:
+The fonts, Studio frames, favicons and Open Graph image are made from the OSflux repository, which is only read. The favicons are copied from its brand pack as drawn, not redrawn:
 
 ```sh
 python -m pip install pillow fonttools brotli
