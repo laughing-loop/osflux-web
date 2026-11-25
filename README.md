@@ -71,8 +71,10 @@ No custom domain is set up yet; `osflux.org` is the likely choice. When it is re
 
 ## Licences
 
+- The website's own code (the HTML, CSS, workflow and `tools/` script) is under the MIT License: see `LICENSE`.
+- The OSflux name and logo, including the files in `site/assets/brand/`, the favicons and the Open Graph image, belong to HOD Technologies Limited, which keeps all rights to them. They are not covered by the MIT License or by OSflux's GPL-3.0-or-later licence.
 - IBM Plex is under the SIL Open Font License 1.1: `site/assets/fonts/OFL.txt`.
-- The OSflux name and logo, including the files in `site/assets/brand/` and the Open Graph image, belong to HOD Technologies Limited, which keeps all rights to them. They are not covered by OSflux's GPL-3.0-or-later licence.
-- OSflux itself is GPL-3.0-or-later; OSflux Studio is distributed under GPL-3.0 only, because it includes Slint.
+- The Studio design frames in `site/assets/img/` come from the OSflux repository.
+- OSflux itself is GPL-3.0-or-later; OSflux Studio is distributed under GPL-3.0 only, because it uses Slint under the GPL-3.0.
 
 © 2026 HOD Technologies Limited
