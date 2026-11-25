@@ -1,0 +1,230 @@
+<!doctype html>
+<!--
+  RELEASE SWITCH: data-release below is the only setting to change.
+    "soon"      the download button reads "Coming soon — first release in preparation"
+    "available" the button links to https://github.com/laughing-loop/OSflux/releases/latest
+  Switch it once that page exists (after the first GitHub release is published).
+-->
+<html lang="en-GB" data-release="soon">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSflux — bootable USB sticks for Windows and Linux, made safely</title>
+  <meta name="description" content="OSflux writes Windows 11 installers, Linux ISOs and raw disk images to USB sticks, refuses the wrong drive, and reads every byte back to check it. Free and open source.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://laughing-loop.github.io/osflux-web/">
+
+  <link rel="icon" href="assets/brand/osflux-mark-small-blue.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OSflux">
+  <meta property="og:title" content="OSflux — bootable USB sticks for Windows and Linux, made safely">
+  <meta property="og:description" content="Writes Windows 11 installers, Linux ISOs and raw disk images to USB sticks, refuses the wrong drive, and checks every byte. Free and open source.">
+  <meta property="og:url" content="https://laughing-loop.github.io/osflux-web/">
+  <meta property="og:image" content="https://laughing-loop.github.io/osflux-web/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The OSflux logo with the line: Bootable USB sticks for Windows and Linux, made safely.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OSflux — bootable USB sticks for Windows and Linux, made safely">
+  <meta name="twitter:description" content="Writes Windows 11 installers, Linux ISOs and raw disk images to USB sticks, refuses the wrong drive, and checks every byte.">
+  <meta name="twitter:image" content="https://laughing-loop.github.io/osflux-web/og-image.png">
+  <meta name="twitter:image:alt" content="The OSflux logo with the line: Bootable USB sticks for Windows and Linux, made safely.">
+
+  <link rel="preload" href="assets/fonts/plex-sans-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="OSflux home">
+        <picture>
+          <source srcset="assets/brand/osflux-lockup-white.svg" media="(prefers-color-scheme: dark)">
+          <img src="assets/brand/osflux-lockup-ink.svg" alt="OSflux" width="128" height="28">
+        </picture>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="#download">Download</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contribute">Contribute</a></li>
+          <li><a href="https://github.com/laughing-loop/OSflux">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="download" aria-labelledby="hero-title">
+      <div class="wrap">
+        <p class="eyebrow">Open source · GPL-3.0-or-later</p>
+        <h1 id="hero-title">Bootable USB sticks for Windows and Linux, made&nbsp;safely.</h1>
+        <p class="lede">OSflux writes a Windows&nbsp;11 installer, a Linux ISO or a raw disk image to a USB stick or SD card. It refuses drives it shouldn’t erase, asks you to confirm the exact stick, and reads every byte back when it’s done.</p>
+
+        <div class="actions">
+          <a class="btn btn-primary release-available" href="https://github.com/laughing-loop/OSflux/releases/latest">
+            <span>Download for Windows</span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M10 3v10m-4.5-4.5L10 13l4.5-4.5M4 17h12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+          </a>
+          <p class="btn btn-soon release-soon">
+            <span class="btn-soon-title">Download for Windows</span>
+            <span class="btn-soon-note">Coming soon — first release in preparation</span>
+          </p>
+          <a class="btn btn-secondary" href="https://github.com/laughing-loop/OSflux">
+            <span>View on GitHub</span>
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20"><path d="M4 10h11m-4.5-4.5L15 10l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg>
+          </a>
+        </div>
+
+        <p class="note"><strong>Writing works on Windows only for now.</strong> Today OSflux is a command-line program; OSflux Studio, the desktop app, is being built on the same engine.</p>
+      </div>
+    </section>
+
+    <section class="section" id="preview" aria-labelledby="preview-title">
+      <div class="wrap">
+        <p class="eyebrow">Design preview</p>
+        <h2 id="preview-title">OSflux Studio</h2>
+        <p class="section-lede">The desktop app in progress. These are frames from its design, in your system’s light or dark theme, not screenshots of a released version.</p>
+        <div class="frames">
+          <figure class="frame">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" type="image/webp"
+                srcset="assets/img/02-image-windows-ready-dark-720.webp 720w, assets/img/02-image-windows-ready-dark-1200.webp 1200w"
+                sizes="(min-width: 1000px) 560px, calc(100vw - 40px)">
+              <img src="assets/img/02-image-windows-ready-light-720.webp"
+                srcset="assets/img/02-image-windows-ready-light-720.webp 720w, assets/img/02-image-windows-ready-light-1200.webp 1200w"
+                sizes="(min-width: 1000px) 560px, calc(100vw - 40px)"
+                width="1200" height="800" loading="lazy" decoding="async"
+                alt="OSflux Studio, step 1 of 5, Image checked: a Windows 11 ISO with plan status Ready, UEFI boot, and a note that install.wim will be split into 2 parts to fit FAT32.">
+            </picture>
+            <figcaption><span class="mono">Step 1</span> The engine’s plan for a Windows&nbsp;11 ISO</figcaption>
+          </figure>
+          <figure class="frame">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" type="image/webp"
+                srcset="assets/img/07-safety-check-ready-dark-720.webp 720w, assets/img/07-safety-check-ready-dark-1200.webp 1200w"
+                sizes="(min-width: 1000px) 560px, calc(100vw - 40px)">
+              <img src="assets/img/07-safety-check-ready-light-720.webp"
+                srcset="assets/img/07-safety-check-ready-light-720.webp 720w, assets/img/07-safety-check-ready-light-1200.webp 1200w"
+                sizes="(min-width: 1000px) 560px, calc(100vw - 40px)"
+                width="1200" height="800" loading="lazy" decoding="async"
+                alt="OSflux Studio, step 3 of 5, safety check verdict Ready: five of five checks passed, including target drive allowed and image fits on drive.">
+            </picture>
+            <figcaption><span class="mono">Step 3</span> The safety check verdict</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <p class="eyebrow">Features</p>
+        <h2 id="features-title">What OSflux does today</h2>
+        <ul class="features">
+          <li class="feature">
+            <span class="feature-num mono">01</span>
+            <h3>Safe by default</h3>
+            <p>Only removable drives such as USB sticks and SD cards can be written. The system drive and external hard disks and SSDs are refused. You confirm with the drive’s four-character code, or the full phrase if it has files on it, and the confirmation expires after 10&nbsp;minutes.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-num mono">02</span>
+            <h3>Windows 11 ISOs</h3>
+            <p>The installer is copied onto a FAT32 stick that starts in UEFI mode, with Secure Boot intact. An <code>install.wim</code> over 4&nbsp;GB is split into parts automatically, the same form <code>DISM</code> makes, with nothing extracted to a temporary folder.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-num mono">03</span>
+            <h3>Windows Setup options</h3>
+            <p>Off unless you choose them: skip the TPM&nbsp;2.0 and Secure Boot checks, use a local account instead of a Microsoft account, skip the privacy questions, and stop automatic BitLocker encryption. No password is ever stored on the stick.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-num mono">04</span>
+            <h3>Every byte checked</h3>
+            <p>After writing, OSflux reads every byte back and compares it, so a faulty or fake-capacity stick is caught. It also prints the image’s SHA-256 to compare with the one the publisher lists.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-num mono">05</span>
+            <h3>Linux ISOs and disk images</h3>
+            <p>Hybrid Linux ISOs, such as Ubuntu, Fedora, Debian, Arch and Mint, and raw <code>.img</code> disk images are copied to the stick byte for byte.</p>
+          </li>
+          <li class="feature feature-note">
+            <span class="feature-num mono">Platform</span>
+            <h3>Windows only, for now</h3>
+            <p>Writing drives works on Windows today, from an Administrator prompt. Linux and macOS drive access is planned: OSflux builds and is tested on Linux, but can’t write drives there yet.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="safety" aria-labelledby="safety-title">
+      <div class="wrap">
+        <p class="eyebrow">Safety check</p>
+        <h2 id="safety-title">How OSflux avoids erasing the wrong drive</h2>
+        <p class="section-lede">Writing a stick erases it, so every write goes through the same chain of checks. The engine makes every decision; the app and the command line only ask it.</p>
+        <ol class="steps">
+          <li>
+            <h3>Only removable drives are offered</h3>
+            <p>OSflux lists your drives and refuses the one Windows runs from, external hard disks and SSDs, and any drive whose size or identity it can’t read.</p>
+          </li>
+          <li>
+            <h3>The image and the drive are checked together</h3>
+            <p>An image that doesn’t fit, or one OSflux can’t make sense of, is stopped before you’re asked to confirm anything.</p>
+          </li>
+          <li>
+            <h3>You confirm that exact stick</h3>
+            <p>An empty stick is confirmed with its four-character drive code. A stick with files on it needs the full phrase, such as <code class="phrase">OSFLUX ERASE TARGET 2 7F3A</code>. The code comes from the drive’s model, serial number and device ID, so a swapped stick won’t match.</p>
+          </li>
+          <li>
+            <h3>The confirmation runs out</h3>
+            <p>It covers one write of the same image within 10&nbsp;minutes. Just before writing, OSflux checks the drive again and stops if anything has changed.</p>
+          </li>
+          <li>
+            <h3>Written, read back and recorded</h3>
+            <p>OSflux writes the stick, reads every byte back, and records each attempt in an audit log on your PC. If it can’t record that a write is starting, it doesn’t touch the drive.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="contribute" aria-labelledby="contribute-title">
+      <div class="wrap">
+        <p class="eyebrow">Open source</p>
+        <h2 id="contribute-title">Free software, built in the open</h2>
+        <div class="two-col">
+          <div class="licence">
+            <p>OSflux is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License, version 3 or later</a> (<code>GPL-3.0-or-later</code>). The OSflux Studio program is distributed under GPL-3.0 only, because it includes Slint, which is licensed that way.</p>
+            <p>Made by <a href="https://hodtechnologies.com">HOD Technologies Limited</a>. The OSflux name and logo are not covered by the licence.</p>
+          </div>
+          <div class="contribute">
+            <h3>Contribute</h3>
+            <p>OSflux is written in Rust. Every change is checked on Windows and Linux. Bug reports, tests on real hardware and code are all welcome.</p>
+            <ul class="link-list">
+              <li><a href="https://github.com/laughing-loop/OSflux"><span>Source code</span><span class="mono">laughing-loop/OSflux</span></a></li>
+              <li><a href="https://github.com/laughing-loop/OSflux/blob/main/CONTRIBUTING.md"><span>How to contribute</span><span class="mono">CONTRIBUTING.md</span></a></li>
+              <li><a href="https://github.com/laughing-loop/OSflux/issues"><span>Report a bug or idea</span><span class="mono">Issues</span></a></li>
+              <li><a href="https://github.com/laughing-loop/OSflux/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22"><span>Start small</span><span class="mono">Good first issues</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 HOD Technologies Limited</p>
+      <ul class="footer-links">
+        <li><a href="https://hodtechnologies.com">hodtechnologies.com</a></li>
+        <li><a href="https://github.com/laughing-loop/OSflux/blob/main/LICENSE">Licence</a></li>
+        <li><a href="https://github.com/laughing-loop/OSflux">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
