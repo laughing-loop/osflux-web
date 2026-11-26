@@ -84,7 +84,7 @@
           </a>
         </div>
 
-        <p class="note"><strong>Writing works on Windows only for now.</strong> Today OSflux is a command-line program; OSflux Studio, the desktop app, is being built on the same engine.</p>
+        <p class="note"><strong>Writing works on Windows only for now.</strong> There are two ways to use OSflux: OSflux Studio, the desktop app that writes and verifies sticks, and the command line. Both use the same engine.</p>
 
         <section class="signing" id="code-signing" aria-labelledby="signing-title">
           <h2 id="signing-title">Code signing policy</h2>
@@ -148,7 +148,7 @@
           <li class="feature">
             <span class="feature-num mono">01</span>
             <h3>Safe by default</h3>
-            <p>Only removable drives such as USB sticks and SD cards can be written. The system drive and external hard disks and SSDs are refused. You confirm with the drive’s four-character code, or the full phrase if it has files on it, and the confirmation expires after 10&nbsp;minutes.</p>
+            <p>Only removable drives such as USB sticks and SD cards can be written. The system drive and external hard disks and SSDs are refused. You confirm with the drive’s four-character code; if it has files on it, you also tick a box naming what will be lost (the command line asks for the full phrase instead). The confirmation expires after 10&nbsp;minutes.</p>
           </li>
           <li class="feature">
             <span class="feature-num mono">02</span>
@@ -173,7 +173,7 @@
           <li class="feature feature-note">
             <span class="feature-num mono">Platform</span>
             <h3>Windows only, for now</h3>
-            <p>Writing drives works on Windows today, from an Administrator prompt. Linux and macOS drive access is planned: OSflux builds and is tested on Linux, but can’t write drives there yet.</p>
+            <p>Writing drives works on Windows today, with Administrator rights. Linux and macOS drive access is planned: OSflux builds and is tested on Linux, but can’t write drives there yet.</p>
           </li>
         </ul>
       </div>
@@ -195,7 +195,7 @@
           </li>
           <li>
             <h3>You confirm that exact stick</h3>
-            <p>An empty stick is confirmed with its four-character drive code. A stick with files on it needs the full phrase, such as <code class="phrase">OSFLUX ERASE TARGET 2 7F3A</code>. The code comes from the drive’s model, serial number and device ID, so a swapped stick won’t match.</p>
+            <p>An empty stick is confirmed with its four-character drive code. For a stick with files on it, OSflux Studio asks for the same code and a ticked box that names what will be lost, such as “Erase SanDisk Ultra (59.6&nbsp;GB) and the 1 partition with files on it”; the command line asks for the full phrase, such as <code class="phrase">OSFLUX ERASE TARGET 2 7F3A</code>. The code comes from the drive’s model, serial number and device ID, so a swapped stick won’t match.</p>
           </li>
           <li>
             <h3>The confirmation runs out</h3>
