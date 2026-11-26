@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy statement — OSflux</title>
+  <meta name="description" content="OSflux and OSflux Studio make no network connections, send no data and have no telemetry.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://laughing-loop.github.io/osflux-web/privacy.html">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/brand/osflux-mark-small3-16.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./" aria-label="OSflux home">
+        <picture>
+          <source srcset="assets/brand/osflux-lockup-white.svg" media="(prefers-color-scheme: dark)">
+          <img src="assets/brand/osflux-lockup-ink.svg" alt="OSflux" width="128" height="28">
+        </picture>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="privacy">
+    <div class="wrap">
+      <p class="eyebrow">Privacy statement</p>
+      <h1>OSflux sends nothing anywhere.</h1>
+      <p class="lede">OSflux and OSflux Studio make no network connections, send no data and have no telemetry. This program will not transfer any information to other networked systems unless you ask it to.</p>
+
+      <h2>What OSflux reads</h2>
+      <ul>
+        <li>The image file you choose, such as a Windows or Linux ISO.</li>
+        <li>The drives on your PC: their model, size, serial number and how they are connected, to tell which ones may be written. With Administrator rights it also reads a removable drive's partition table and top folder, to see whether it is empty.</li>
+        <li>For the Windows Setup option that copies this PC's region and keyboard, your formats, locale and keyboard layout, which go only onto the stick you write.</li>
+      </ul>
+
+      <h2>What OSflux keeps</h2>
+      <p>Only on your PC, in <code>%LOCALAPPDATA%\OSflux</code>:</p>
+      <ul>
+        <li><code>audit.log</code>: every confirmation and write, with the time, your Windows user and computer name, the image's path, size and SHA-256, and the drive's path, model and identity code.</li>
+        <li>The one-time write confirmations, each removed once used and useless after 10 minutes.</li>
+        <li>OSflux Studio's settings (theme and verify after writing) and its log of how it started.</li>
+      </ul>
+      <p>You can read or delete these files at any time. The folder can be moved with the <code>OSFLUX_STATE_DIR</code> environment variable.</p>
+
+      <h2>Links</h2>
+      <p>The Website, Source code and Report a problem links in OSflux Studio's About open in your browser, which then follows its own privacy settings. OSflux itself does not connect.</p>
+
+      <h2>This website</h2>
+      <p>This site has no trackers, cookies or JavaScript, and its fonts are served from the site itself. It is hosted on GitHub Pages, which may keep server logs as described in <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+
+      <p><a href="./#code-signing">Code signing policy</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 HOD Technologies Limited</p>
+      <ul class="footer-links">
+        <li><a href="https://hodtechnologies.com">hodtechnologies.com</a></li>
+        <li><a href="https://github.com/laughing-loop/OSflux/blob/main/LICENSE">Licence</a></li>
+        <li><a href="https://github.com/laughing-loop/OSflux">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

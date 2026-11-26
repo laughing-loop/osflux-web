@@ -255,6 +255,30 @@ h3 {
 }
 .note strong { font-weight: 600; }
 
+/* ---------- Code signing policy (in the download area) ---------- */
+.signing {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: var(--layer-01);
+  max-width: 72ch;
+  font-size: 0.9375rem;
+}
+.signing h2 { font-size: 1.125rem; font-weight: 600; margin: 0 0 8px; }
+.signing p { color: var(--text-secondary); }
+.signing p + p, .signing dl + p { margin-top: 12px; }
+.signing-roles { display: grid; gap: 8px 32px; margin-top: 12px; }
+@media (min-width: 600px) { .signing-roles { grid-template-columns: max-content max-content; } }
+.signing-roles dt { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-secondary); }
+.signing-roles dd { margin: 2px 0 0; }
+
+/* ---------- Privacy page ---------- */
+.privacy { padding: 64px 0 var(--section-space); }
+.privacy .wrap > * { max-width: 68ch; }
+.privacy h2 { font-size: 1.25rem; font-weight: 600; margin-top: 40px; }
+.privacy p, .privacy ul { margin-top: 12px; color: var(--text-secondary); }
+.privacy ul { padding-left: 1.25rem; list-style: disc; }
+.privacy li + li { margin-top: 6px; }
+
 /* ---------- Sections ---------- */
 .section {
   padding: var(--section-space) 0;
