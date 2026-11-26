@@ -39,14 +39,14 @@ Then open http://localhost:8000/. Opening `site/index.html` straight from disk w
 
 ## Switch on the download button
 
-There is no OSflux release yet, so the hero shows "Coming soon — first release in preparation" instead of a download link. Once https://github.com/laughing-loop/OSflux/releases/latest exists, change one attribute near the top of `site/index.html`:
+The button is switched on and links to the v0.1.0 release. To go back to "Coming soon — first release in preparation", or to switch it on for a first release elsewhere, change one attribute near the top of `site/index.html`:
 
 ```html
 <html lang="en-GB" data-release="soon">       <!-- before -->
 <html lang="en-GB" data-release="available">  <!-- after -->
 ```
 
-The button then reads "Download for Windows" and links to the latest release page. Push to `main` and it is live a minute later.
+With `available`, the button reads "Download for Windows" and links to the release in its `href`. For a new release, update the `href` (and the version in the button text) to the new tag. Push to `main` and it is live a minute later.
 
 ## How it deploys
 
